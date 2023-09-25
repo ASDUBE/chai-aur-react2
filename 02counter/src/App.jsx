@@ -6,13 +6,24 @@ import './App.css'
 function App() {
   let [count, setCount] = useState(1000)
 
+
+
   const addValue=() => {
+    if (count=== 25000) {
+      alert('Target Achieved');
+      return;
+    }
+
     setCount(count+1000);
+
+    
   }
 
   const removeValue=()=> {
-    setCount(count-100);
+    setCount(count-1000);
   }
+
+
 
   return (
     <>
@@ -23,7 +34,7 @@ function App() {
      <button onClick={addValue}>Add Cash</button>
      <br/>
     <button onClick={removeValue}>Remove Cash</button>   
-    <p>Target : 100000</p>   
+    <p>Target : 25000</p>   
     </>
   )
 }
