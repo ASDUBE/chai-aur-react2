@@ -7,9 +7,9 @@ function App() {
   const [isCharacter ,setIsCharacter] = useState(false);
   const [password, setPassword] = useState(" ");
 
-  const passwordRef = useRef(null)
+  const passwordRef = useRef(null) // just reference hook to select the copied material
 
-  const passwordGenerator = useCallback(()=> {
+  const passwordGenerator = useCallback(()=> { // just for optimization , stores function in cache
     let pass = " "
     let str = " ASHUTOSH"
     if (isNumber) str+= "0123456789"
@@ -29,7 +29,7 @@ function App() {
 
   }, [password])
 
-    useEffect(() => {
+    useEffect(() => { // to run method baar baar
      passwordGenerator()
     }, [length, isNumber. isCharacter ,passwordGenerator])
 
